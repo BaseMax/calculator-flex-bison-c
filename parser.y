@@ -1,8 +1,10 @@
 %{
-    void yyerror(char *s);
     #include <stdio.h>
     #include <stdlib.h>
+
     int symbols[52];
+
+    void yyerror(char *s);
     int symbolVal(char symbol);
     void updateSymbolVal(char symbol, int val);
 %}
