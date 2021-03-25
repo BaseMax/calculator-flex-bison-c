@@ -1,5 +1,6 @@
 %{
-  #include "y.tab.h"
+  #include "parser.tab.h"
+
   int yylex();
   void yyerror(char *s);
 %}
