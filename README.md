@@ -23,6 +23,8 @@ or do manually:
 $ flex myscanner.l
 $ yacc -d parser.y
 $ gcc y.tab.c lex.yy.c
+or
+$ cc y.tab.c lex.yy.c
 ```
 
 ## Using
