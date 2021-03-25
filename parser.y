@@ -13,10 +13,11 @@
 
 %token print
 %token exit_command
-%token <num> number
-%token <id> identifier
-%token <num> line exp term
-%token <id> assignment
+
+%type <num> number
+%type <id> identifier
+%type <num> line exp term
+%type <id> assignment
 
 %%
 
