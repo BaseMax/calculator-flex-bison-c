@@ -15,7 +15,7 @@
 [-+=;]                 {return yytext[0];}
 
 [ \t\n]                ;
-.                      {ECHO; yyerror ("unexpected character");}
+.                      {ECHO; yyerror("unexpected character");}
 
 %%
 
