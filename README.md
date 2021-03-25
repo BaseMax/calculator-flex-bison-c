@@ -2,6 +2,16 @@
 
 A tiny calculator project with lexer/parser based on Flex, Bison with pure c programming language.
 
+## Syntax
+
+```python
+print 5;
+print 100+10;
+a = 50;
+print a;
+print a+a;
+print a+100;
+```
 
 ## Compile
 
