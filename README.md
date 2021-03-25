@@ -44,6 +44,10 @@ Print 150
 
 Feel free to participate and develop.
 
+### Similar repositories
+
+- https://github.com/BaseMax/config-parser-flexc
+
 ### Acknowledgment
 
 I saw an lecture from Prof. Jonathan Engelsma and It's encouraged me to do this project myself.
