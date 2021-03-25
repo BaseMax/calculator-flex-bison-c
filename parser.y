@@ -16,8 +16,9 @@
 %token print
 %token exit_command
 
-%type <num> number
-%type <id> identifier
+%token <num> number
+%token <id> identifier
+
 %type <num> line exp term
 %type <id> assignment
 
