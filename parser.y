@@ -10,6 +10,7 @@
 
     int symbolVal(char symbol);
     void updateSymbolVal(char symbol, int val);
+    int computeSymbolIndex(char token);
 %}
 
 %union {
