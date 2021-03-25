@@ -32,9 +32,9 @@
 
 line    : assignment ';'         {;}
         | exit_command ';'       {exit(EXIT_SUCCESS);}
-        | print exp ';'          {printf("Printing %d\n", $2);}
+        | print exp ';'          {printf("Print %d\n", $2);}
         | line assignment ';'    {;}
-        | line print exp ';'     {printf("Printing %d\n", $3);}
+        | line print exp ';'     {printf("Print %d\n", $3);}
         | line exit_command ';'  {exit(EXIT_SUCCESS);}
         ;
 
@@ -74,7 +74,7 @@ int computeSymbolIndex(char token) {
 } 
 
 void yyerror(char *s) {
-    fprintf (stderr, "%s\n", s);
+    fprintf(stderr, "%s\n", s);
 }
 
 int main(void) {
@@ -82,5 +82,5 @@ int main(void) {
     for(i=0; i<52; i++) {
         symbols[i] = 0;
     }
-    return yyparse ( );
+    return yyparse();
 }
