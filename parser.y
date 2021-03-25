@@ -1,15 +1,21 @@
 %{
     #include <stdio.h>
     #include <stdlib.h>
+    #include <ctype.h>
 
     int symbols[52];
 
+    int yylex();
     void yyerror(char *s);
+
     int symbolVal(char symbol);
     void updateSymbolVal(char symbol, int val);
 %}
 
-%union {int sum; char id;}
+%union {
+    int num;
+    char id;
+}
 
 %start line
 
@@ -19,18 +25,17 @@
 %token <num> number
 %token <id> identifier
 
-%type <num> line exp term
+%type <num> line exp term 
 %type <id> assignment
 
 %%
 
-line    : exit_command ';'       {exit(EXIT_SUCCESS);}
-        | assignment ';'         {;}
-        | print exp ';'          {printf("Print %d\n", $2);}
-
-        | line exit_command ';'  {exit(EXIT_SUCCESS);}
+line    : assignment ';'         {;}
+        | exit_command ';'       {exit(EXIT_SUCCESS);}
+        | print exp ';'          {printf("Printing %d\n", $2);}
         | line assignment ';'    {;}
-        | line print exp ';'     {printf("Print %d\n", $3);}
+        | line print exp ';'     {printf("Printing %d\n", $3);}
+        | line exit_command ';'  {exit(EXIT_SUCCESS);}
         ;
 
 assignment : identifier '=' exp  { updateSymbolVal($1,$3); }
@@ -69,7 +74,7 @@ int computeSymbolIndex(char token) {
 } 
 
 void yyerror(char *s) {
-    fprintf(stderr, "%s\n", s);
+    fprintf (stderr, "%s\n", s);
 }
 
 int main(void) {
@@ -77,5 +82,5 @@ int main(void) {
     for(i=0; i<52; i++) {
         symbols[i] = 0;
     }
-    return yyparse();
+    return yyparse ( );
 }
