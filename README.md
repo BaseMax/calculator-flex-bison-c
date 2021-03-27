@@ -46,7 +46,7 @@ Feel free to participate and develop.
 
 ### Similar repositories
 
-- https://github.com/BaseMax/config-parser-flexc
+- https://github.com/BaseMax/config-parser-flex
 
 ### Acknowledgment
 
